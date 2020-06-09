@@ -37,14 +37,19 @@ export const actions = {
     let errorMessage =
       'Ошибка отправки данных, пожалуйста, попробуйте еще раз.';
     await this.$axios
-      .post(`${process.env.API_URL}/forms/contacts`, answers)
+      .post(
+        `${process.env.API_URL}/forms/contacts_link_changed_to_avoid_inconvenience`,
+        answers
+      )
       .then(() => {
         commit('toggleCallback');
         errorMessage = '';
       })
       .catch(error => {
         if (typeof error.response !== 'undefined') {
-          errorMessage = errors[error.response.data.title];
+          errorMessage =
+            errors[error.response.data.title] ||
+            'Ошибка отправки данных, пожалуйста, попробуйте еще раз.';
         } else {
         }
       });
