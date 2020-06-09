@@ -129,7 +129,10 @@ export const actions = {
       let errorMessage =
         'Ошибка отправки данных, пожалуйста, попробуйте еще раз.';
       await this.$axios
-        .post(`${process.env.API_URL}/forms/stories`, getters.getAnswers)
+        .post(
+          `${process.env.API_URL}/forms/stories_link_changed_to_avoid_inconvenience`,
+          getters.getAnswers
+        )
         .then(() => {
           commit('nextId');
           commit('resetAnswers');
@@ -137,7 +140,9 @@ export const actions = {
         })
         .catch(error => {
           if (typeof error.response !== 'undefined') {
-            errorMessage = errors[error.response.data.title];
+            errorMessage =
+              errors[error.response.data.title] ||
+              'Ошибка отправки данных, пожалуйста, попробуйте еще раз.';
           } else {
           }
         });
