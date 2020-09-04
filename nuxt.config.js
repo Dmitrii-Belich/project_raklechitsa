@@ -1,5 +1,9 @@
 export default {
-  mode: 'universal',
+  target: 'static',
+  mode: 'spa',
+  router: {
+    base: '/raklechitsa/',
+  },
   /*
    ** Headers of the page
    */

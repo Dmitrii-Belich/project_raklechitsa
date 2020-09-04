@@ -1,5 +1,6 @@
 {
     "name": "project_raklechitsa",
+    "homepage": "https://dmitrii-belich.github.io/raklechitsa",
     "version": "1.0.0",
     "description": "Проект Фонда Хабенского. Истории людяй, победивших рак, но не свои привычки",
     "author": "happy three friends",
@@ -8,7 +9,8 @@
         "dev": "nuxt",
         "build": "nuxt build",
         "start": "nuxt start",
-        "generate": "nuxt generate"
+        "generate": "nuxt generate",
+        "deploy": "gh-pages -d dist"
     },
     "dependencies": {
         "@nuxtjs/axios": "^5.3.6",
@@ -21,6 +23,7 @@
     "devDependencies": {
         "eslint-config-prettier": "^6.10.0",
         "eslint-plugin-prettier": "^3.1.2",
+        "gh-pages": "^3.1.0",
         "husky": "^4.2.5",
         "prettier": "^1.19.1"
     },
